@@ -11,11 +11,11 @@
 </script>
 
 <nav
-  class="text-white w-full flex items-center justify-between flex-wrap
-  bg-teal-600 p-6 shadow-lg lg:fixed lg:top-0">
+  class="text-main-dark w-full flex items-center justify-between flex-wrap
+  bg-main-light p-6 shadow-lg lg:fixed lg:top-0">
 
-  <a href="." class="font-semibold text-xl tracking-tight mr-4">
-    Your project name
+  <a href="." class="text-main-red font-semibold text-xl tracking-tight mr-4">
+    Neo Iter
   </a>
 
   <div class="block lg:hidden">
