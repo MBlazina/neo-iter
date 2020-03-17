@@ -320,6 +320,7 @@ html {
 
 h1,
 h2,
+h6,
 p,
 pre {
   margin: 0;
@@ -414,7 +415,8 @@ button,
 }
 
 h1,
-h2 {
+h2,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -487,9 +489,9 @@ img {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 320px) {
   .container {
-    max-width: 640px;
+    max-width: 320px;
   }
 }
 
