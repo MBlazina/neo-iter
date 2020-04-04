@@ -13,6 +13,10 @@ module.exports = {
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
     },
+    container:{
+      center: true,
+      padding: '15px'
+    },
     extend: {
       
       colors: {

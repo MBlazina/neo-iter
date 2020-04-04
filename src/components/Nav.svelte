@@ -1,30 +1,76 @@
-<script>
-  import Hamburguer from "./Hamburguer.svelte";
-  import NavLink from "./NavLink.svelte";
-
-  export let segment;
-  let expand = false;
-
-  function toggleMobileMenu(event) {
-    expand = event.detail;
+<style lang="scss">
+  $header_height: 70px;
+  .header {
+    height: $header_height;
   }
-</script>
+  .logo {
+    font-size: 30px;
+    color: cadetblue;
+    font-weight: bold;
+  }
+  nav {
+    .nav-level1 {
+      display: flex;
+      >li{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+          >.nav-level2{
+            display: block;
+          } 
+        }
+      }
+    }
+    .nav-level2{
+      position: absolute;
+      top: 70px;
+      left: 0;
+      margin-right: -100vw;
+      display: none;
+      border: 1px solid;
+    }
+  }
+</style>
 
-<nav
-  class="text-main-dark w-full flex items-center justify-between flex-wrap
-  bg-main-light p-6 shadow-lg lg:fixed lg:top-0">
+<div class="header bg-gray-400">
+  <div class="h-full container mx-auto flex justify-start items-center">
+    <a href=".">
+      <div class="logo">
+        <h1 class="">LOGO</h1>
+      </div>
+    </a>
 
-  <a href="." class="text-main-red font-semibold text-xl tracking-tight mr-4">
-    Neo Iter
-  </a>
+    <nav class="h-full">
+      <ul class="nav-level1 h-full">
+        <li>
+          Menu 1
+          <ul class="nav-level2">
+            <li>Sub Menu 1 Sub Menu 1</li>
+            <li>Sub Menu 1</li>
+          </ul>
+        </li>
 
-  <div class="block lg:hidden">
-    <Hamburguer on:click={toggleMobileMenu} {expand} />
+        <li>
+          Menu 2
+          <ul class="nav-level2">
+            <li>Sub Menu 2-Sub Menu 2</li>
+            <li>Sub Menu 2</li>
+          </ul>
+        </li>
+
+        <li>
+          Menu 3
+          <ul class="nav-level2">
+            <li>Sub Menu 3-Sub Menu 3</li>
+            <li>Sub Menu 3</li>
+          </ul>
+        </li>
+
+      
+      </ul>
+    </nav>
+
   </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <div class="{!expand && 'hidden'} lg:block text-sm lg:flex-grow">
-      <NavLink text="About" href="about" {segment} />
-      <NavLink text="Blog" href="blog" {segment} rel="prefetch" />
-    </div>
-  </div>
-</nav>
+</div>

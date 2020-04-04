@@ -13,10 +13,8 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h1 class="text-center text-2xl my-4">Great success!</h1>
+<h1 class="text-center text-2xl my-4">Home page</h1>
+<div class="banner bg-gray-600"></div>
+<p class="sm:w-1/2 lg:w-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae explicabo impedit aliquam quis tempore fuga sapiente ratione magnam a fugit saepe, unde vero eligendi aut alias suscipit ipsam ex hic.</p>
 
-<div class="flex flex-col items-center mb-4 bg-blue-200">
-	<img alt='Sapper Logo' class="w-2/3 lg:w-1/3" src='sapper-logo.svg'>
-	<img alt='Tailwind Logo' class="w-2/3 lg:w-1/3" src='tailwind-logo.svg'>
-</div>
-<p class="text-center"><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+

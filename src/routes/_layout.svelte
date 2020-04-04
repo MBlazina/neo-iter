@@ -1,15 +1,16 @@
 <script>
-	import Nav from '../components/Nav.svelte';
-
-	export let segment;
+	import Nav from './../components/Nav.svelte';
 </script>
-
 <style lang="scss" global>
- @import "./style/global.scss";
+  @import "./style/global.scss";
 </style>
 
-<Nav {segment}/>
+<div class="flex flex-col h-full">
+  <Nav/>
+  <div class="container h-full">
 
-<main class="lg:mt-20 container mx-auto p-4">
-	<slot></slot>
-</main>
+    <slot></slot>
+	
+   </div>
+  <footer class="text-center bg-gray-400">FOOTER</footer>
+</div>
