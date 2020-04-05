@@ -1,3 +1,9 @@
+<script>
+
+
+ 
+</script>
+
 <style lang="scss">
   $header_height: 70px;
   .header {
@@ -10,31 +16,69 @@
   }
   nav {
     .nav-level1 {
+      white-space: nowrap;
       display: flex;
-      >li{
+      > li {
         position: relative;
+        padding: 15px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        &:hover{
-          >.nav-level2{
-            display: block;
-          } 
+        &:hover {
+          > .nav-level2 {
+            opacity: 1;
+            max-width: 500px;
+            transform: rotate(2deg);
+            z-index: 999;
+          }
         }
       }
     }
-    .nav-level2{
-      position: absolute;
-      top: 70px;
+    .nav-level2 {
+      position:absolute;
       left: 0;
-      margin-right: -100vw;
-      display: none;
-      border: 1px solid;
+      top:90%;
+      opacity: 1;
+      width: auto;
+      max-width: 0;
+      background: white;
+      white-space: nowrap;
+      overflow: hidden;
+      align-self: flex-start;
+      margin-left: 15px;
+      box-shadow: 1px 1px 10px rgba(100, 100, 100, 0.1);
+      transition: opacity 0.5s, max-width 0.5s, transform 0.2s;
+      
+      li {
+        padding: 15px;
+        position: relative;
+        box-shadow: 1px 1px rgba(100, 100, 100, 0.1);
+        transition: background-color 0.2s;
+        &::after{
+            content: "";
+            display: block;
+            background: coral;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        &:hover{
+          background-color: cadetblue;
+          color: white;
+          &::after{
+            width: 100%;
+          }
+          
+        }
+      }
     }
   }
 </style>
 
-<div class="header bg-gray-400">
+<div class="header">
   <div class="h-full container mx-auto flex justify-start items-center">
     <a href=".">
       <div class="logo">
@@ -47,6 +91,8 @@
         <li>
           Menu 1
           <ul class="nav-level2">
+            <li>Sub Menu 1 Sub Menu 1</li>
+            <li>Sub Menu 1</li>
             <li>Sub Menu 1 Sub Menu 1</li>
             <li>Sub Menu 1</li>
           </ul>
@@ -68,7 +114,6 @@
           </ul>
         </li>
 
-      
       </ul>
     </nav>
 
